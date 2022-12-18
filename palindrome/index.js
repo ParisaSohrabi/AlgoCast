@@ -8,8 +8,11 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
- let reversed=str.split('').reverse().join('');
- return str===reversed
+   let reversed=''
+for(let char of str.split('')){
+   reversed= char+reversed
+}
+return str===reversed
 }
 palindrome('neda')
 console.log(palindrome('neda'))
