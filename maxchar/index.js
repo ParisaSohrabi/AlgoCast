@@ -7,13 +7,20 @@
 
 function maxChar(str) {
   let charMap={}
-  let maxchar=''
+  let character=''
+  let max=0;
   for(let char of str){
-    charMap[char]=charMap[char]+1 || 1;
-    maxchar=char
+    charMap[char]= charMap[char]+1 || 1;
   }
-return maxchar
+ for(let char in charMap){
+  if(charMap[char]>max){
+   max=charMap[char];
+   character=char
+  }
+ }
+ return character
 }
 maxChar("abcccccccd")
 console.log( maxChar("abcccccccd"))
 module.exports = maxChar;
+
