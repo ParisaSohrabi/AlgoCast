@@ -13,14 +13,16 @@
 // if it constains vowel increese the counter
 
 function vowels(str) {
-   const vowels=['a','e','i','o','u'];
-   let counter=0;
-   for(let char of str.toLowerCase()){
-    if(vowels.includes(char)){
-      counter++;
-    }
-   }
-return counter;
+
 }
 vowels('Hi There!')
 module.exports = vowels;
+
+// let counter=0
+// const vowels=['a','e','i','o','u']
+// for(let char of str.toLowerCase()){
+//   if(vowels.includes(char)){
+//     counter++
+//   }
+// }
+// return counter
