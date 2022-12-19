@@ -14,25 +14,21 @@
 //       ' ### '
 //       '#####'
 
-// level=4
-// row=level(0 to 4)
-// col=     2=>3 (0 to level*2-1)
-         // 3=>5
-        //  4=>7
-
+// pyramid(4)=> 4 rows and 7column
 function pyramid(n) {
-    const middle=Math.floor((n*2-1)/2)
-for(let row=0;row<n;row++){
-    let level='';
-    for(let col=0;col<n*2-1;col++){
-        if(middle-row<=col && middle+row>=col){
-            level+='#'
-        }else{
-            level+=' '
-        }
+  let middlePoint = Math.floor((2 * n - 1) / 2);
+  for (let row = 0; row < n; row++) {
+    let level = "";
+    for (let col = 0; col < 2 * n - 1; col++) {
+      if (middlePoint - row <= col && middlePoint + row >= col) {
+        level += "#";
+      } else {
+        level += " ";
+      }
     }
-    console.log(level)
-}
+  console.log(level)
+
+  }
 }
 
 module.exports = pyramid;
