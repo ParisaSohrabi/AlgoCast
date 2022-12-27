@@ -8,27 +8,16 @@
 // Example:
 //   fib(4) === 3
 
-function memoize(fn){
-    const cache={}
-    //args take all the arguments & assign them as as array
-    return function(...args){
-if(cache[args]){
-    return cache[args]
-}
-//whenever we call a function with an array of arguments we have to use "apply" helper
-const result=fn.apply(this,args);
-cache[args]=result
-return result
-    }
-}
 
-function slowFib(n) {
-    if(n<2){
-        return n
-    }
-    return fib(n-1)+fib(n-2)
+function fib(n) {
+  const result=[0,1]
+  for(let i=2;i<=n;i++){
+    const a=result[i-1]
+    const b=result[i-2]
+    result.push(a+b)
+  }
+  return result[n]
 }
-fib=memoize(slowFib)
 
 module.exports = fib;
 
