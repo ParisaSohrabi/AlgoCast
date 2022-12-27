@@ -9,24 +9,24 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
- const astringA=clean(stringA)
- const bstringB=clean(stringB)
- if(Object.keys(astringA).length!== Object.keys(bstringB).length){
+ const aMap=clean(stringA)
+ const bMap=clean(stringB)
+ if(Object.keys(aMap).length!==Object.keys(bMap).length){
    return false
  }
-for(let char in astringA){
-   if(astringA[char]=== bstringB[char]){
-      return true
+ for(let char in aMap){
+   if(aMap[char]!==bMap[char]){
+      return false
    }
-}
+ }
+ return true
 }
 function clean(str){
    const charMap={}
-   const converted=str.replace(/[^\w]g/,'').toLowerCase().split('');
-for(let char of converted){
-charMap[char]= charMap[char]+1 || 1
-}
-return charMap
+   for(let char of str.replace(/[^\w]g/,'').toLowerCase()){
+      charMap[char]=charMap[char]+1 || 1
+   }
+   return charMap
 }
 anagrams("rail safety", "fairy tales");
 console.log(anagrams("rail safety", "fairy tales"));
