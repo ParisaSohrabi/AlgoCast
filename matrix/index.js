@@ -29,42 +29,42 @@
 //11- decrement end col
 
 function matrix(n) {
-const results=[];
+let result=[]
 for(let i=0;i<n;i++){
-    results.push([])
+    result.push([])
 }
 let counter=1;
 let startRow=0;
 let endRow=n-1;
-let startCol=0;
-let endCol=n-1;
-while(startCol<=endCol && startRow<=endRow){
+let startColumn=0;
+let endColumn=n-1;
+while(startColumn<=endColumn && startRow<=endRow){
     // top row
-    for(let i=startCol;i<=endCol;i++){
-        results[startRow][i]=counter;
+    for(let i=startColumn;i<=endColumn;i++){
+        result[startRow][i]=counter;
         counter++
     }
     startRow++;
     // right col
     for(let i=startRow;i<=endRow;i++){
-results[i][endCol]=counter
-counter++;
-    }
-    endCol--;
-    // bottom row
-    for(let i=endCol;i>=startCol;i--){
-        results[endRow][i]=counter;
-        counter++;
-    }
-    endRow--;
-    // left col
-    for(let i=endRow;i>=startRow;i--){
-        results[i][startCol]=counter
+        result[i][endColumn]=counter;
         counter++
     }
-    startCol++
+    endColumn--;
+    // bottom row
+    for(let i=endColumn;i>=startColumn;i--){
+        result[endRow][i]=counter
+        counter++
+    }
+    endRow--
+    // left col
+    for(let i=endRow;i>=startRow;i--){
+        result[i][startColumn]=counter
+        counter++
+    }
+    startColumn++
 }
-return results
+return result
 }
 
 module.exports = matrix;
