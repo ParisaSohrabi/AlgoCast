@@ -7,21 +7,19 @@
 
 function maxChar(str) {
 let charMap={}
-let charMax=''
-let max=0
+let max=0;
+let result=''
 for(let char of str){
-  charMap[char]=charMap[char]+1 || 1
+  charMap[char]= charMap[char]+1 || 1;
+  // return charMap;
 }
 for(let char in charMap){
-if(charMap[char]>max){
-  max=charMap[char]
-  charMax=char
+  if(charMap[char]>max){
+    max=charMap[char];
+result=char;
+  } 
 }
-
-}
-return charMax
-
-
+return result
 }
 maxChar("abcccccccd")
 console.log( maxChar("abcccccccd"))
