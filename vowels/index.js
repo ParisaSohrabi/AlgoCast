@@ -7,22 +7,21 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-// define an array and assign it woth vouwels letters
-// define a counter
-// loop through the string given
-// if it constains vowel increese the counter
-
+// define an array and asign it with vowels character
+// define counter
+// loop through the string and check each character with that array
+// if current char equall to one of the vowels then counter++
+// return counter
 function vowels(str) {
-
+const myArr=['a','e','i','o','u']
+let counter=0;
+for(let char of str.toLowerCase()){
+  if(myArr.includes(char)){
+    counter++
+  }
+}
+return counter
 }
 vowels('Hi There!')
 module.exports = vowels;
 
-// let counter=0
-// const vowels=['a','e','i','o','u']
-// for(let char of str.toLowerCase()){
-//   if(vowels.includes(char)){
-//     counter++
-//   }
-// }
-// return counter
