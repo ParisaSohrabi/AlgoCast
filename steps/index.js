@@ -17,24 +17,23 @@
 //       '### '
 //       '####'
 
-//row=4 => 1st level: # -      =>row=0 col=0
-//         2nd level: # # -    =>row=1 col=0,col=1
-//         3rd level: # # # -  =>row=2 col=0,col=1,col=2
-//         4th level: # # # #  =>row=3 col=0,col=1,col=2,col=3
+// # row=0,col=0
+// ## row=1,col=0,1
+// ### row=2,col=0,1,2
+// #### row=3,col=0,1,2,3
 
 function steps(n) {
   for(let row=0;row<n;row++){
-    let step=''
+    let levels='';
     for(let col=0;col<n;col++){
-        if(col<=row){
-           step+="#"
-        }else{
-            step+=' '
-        }
-
+      if(col<=row){
+        levels+="#"
+      }else{
+        levels+=' '     
+      }
     }
-    console.log(step)
-  } 
+    console.log(levels)
+  }
 }
 steps(4)
 console.log(steps(4))
