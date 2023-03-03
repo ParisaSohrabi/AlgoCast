@@ -9,13 +9,13 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-let result=[]
-let index=0;
+const chunked=[]
+let index=0
 while(index<array.length){
-  result.push( array.slice(index,index+size))
+  chunked.push(array.slice(index,index+size))
   index+=size
 }
-return result
+return chunked
 }
 chunk([1, 2, 3, 4, 5], 2)
 console.log( chunk([1, 2, 3, 4, 5], 2))
