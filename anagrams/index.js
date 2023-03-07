@@ -9,29 +9,16 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
- const aString=helper(stringA)
- const bString=helper(stringB)
- if(Object.keys(aString).length!==Object.keys(bString).length){
-   return false
- }
- for(let char in aString){
-   if(aString[char]!==bString[char]){
-      return false
-   }else{
-      return true
-   }
- }
+ return cleanString(stringA)===cleanString(stringB)
 
 }
-function helper(str){
- let charMap={}
- for(char of str.replace(/[^\w]g/,'').toLowerCase()){
-   charMap[char]= charMap[char]+1 || 1
- }
- return charMap
+
+function cleanString(str) {
+ return str.replace(/[^\w]/g,'').toLowerCase().split('').sort().join('')
 }
-anagrams("rail safety", "fairy tales");
-console.log(anagrams("rail safety", "fairy tales"));
+
+anagrams('Hi there', 'Bye there');
+console.log(anagrams('Hi there', 'Bye there'));
 module.exports = anagrams;
 
 // function anagrams(stringA, stringB) {
