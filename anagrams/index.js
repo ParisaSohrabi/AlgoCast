@@ -9,16 +9,14 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
- return cleanString(stringA)===cleanString(stringB)
-
+  return helper(stringA)===helper(stringB)
+}
+function helper(str) {
+   return str.replace(/[^\w]/g,"").toLowerCase().split('').sort().join('')
 }
 
-function cleanString(str) {
- return str.replace(/[^\w]/g,'').toLowerCase().split('').sort().join('')
-}
-
-anagrams('Hi there', 'Bye there');
-console.log(anagrams('Hi there', 'Bye there'));
+anagrams('rail safety', 'fairy tales');
+console.log(anagrams('rail safety', 'fairy tales'));
 module.exports = anagrams;
 
 // function anagrams(stringA, stringB) {
