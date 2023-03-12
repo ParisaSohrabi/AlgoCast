@@ -13,15 +13,16 @@
 // if current char equall to one of the vowels then counter++
 // return counter
 function vowels(str) {
-const myArr=['a','e','i','o','u']
-let counter=0;
+let counter=0
+const checker=['a','e','i','o','u']
 for(let char of str.toLowerCase()){
-  if(myArr.includes(char)){
+  if(checker.includes(char)){
     counter++
   }
 }
 return counter
 }
 vowels('Hi There!')
+console.log(vowels('Hi There!'))
 module.exports = vowels;
 
