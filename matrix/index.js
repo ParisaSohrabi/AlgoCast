@@ -15,7 +15,6 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-
 // 1- create empty array of arrays called result
 // 2- create a counter starting at 1
 // 3- as long as (start col<=end col) AND (start row <=end row)
@@ -29,42 +28,41 @@
 //11- decrement end col
 
 function matrix(n) {
-let result=[]
-for(let i=0;i<n;i++){
-    result.push([])
-}
-let counter=1;
-let startRow=0;
-let endRow=n-1;
-let startColumn=0;
-let endColumn=n-1;
-while(startColumn<=endColumn && startRow<=endRow){
-    // top row
-    for(let i=startColumn;i<=endColumn;i++){
-        result[startRow][i]=counter;
-        counter++
-    }
-    startRow++;
-    // right col
-    for(let i=startRow;i<=endRow;i++){
-        result[i][endColumn]=counter;
-        counter++
-    }
-    endColumn--;
-    // bottom row
-    for(let i=endColumn;i>=startColumn;i--){
-        result[endRow][i]=counter
-        counter++
-    }
-    endRow--
-    // left col
-    for(let i=endRow;i>=startRow;i--){
-        result[i][startColumn]=counter
-        counter++
-    }
-    startColumn++
-}
-return result
-}
+  const results = [];
+  for (let i = 0; i < n; i++) {
+    results.push([]);}
 
+    let counter = 1;
+    let startcolumn = 0;
+    let endcolumn = n - 1;
+    let startRow = 0;
+    let endrow = n - 1;
+
+    while (startcolumn <= endcolumn && startRow <= endrow) {
+      for (let i = startcolumn; i <= endcolumn; i++) {
+        results[startRow][i] = counter;
+        counter++;
+      }
+      startRow++;
+      for (let i = startRow; i <= endrow; i++) {
+        results[i][endcolumn] = counter;
+        counter++;
+      }
+      endcolumn--;
+
+      for (let i = endcolumn; i >= startcolumn; i--) {
+        results[endrow][i] = counter;
+        counter++;
+      }
+      endrow--;
+      for (let i = endrow; i >= startRow; i--) {
+        results[i][startcolumn] = counter;
+        counter++;
+      }
+      startcolumn++;
+    }
+  return results
+}
+matrix(4);
+console.log(matrix(4));
 module.exports = matrix;
