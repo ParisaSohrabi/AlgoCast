@@ -13,10 +13,10 @@
 // if current char equall to one of the vowels then counter++
 // return counter
 function vowels(str) {
+const vowelCharector=['a','e','i','o','u']
 let counter=0
-const checker=['a','e','i','o','u']
 for(let char of str.toLowerCase()){
-  if(checker.includes(char)){
+  if(vowelCharector.includes(char)){
     counter++
   }
 }
